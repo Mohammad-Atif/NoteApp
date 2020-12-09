@@ -33,4 +33,22 @@ class DatabaseHandler (var context: Context):SQLiteOpenHelper(context, DATABASE_
             Toast.makeText(context,"SUCCESFULLY ADDED",Toast.LENGTH_SHORT).show()
     }
 
+    fun readdate():MutableList<Notes>
+    {
+        val newnotes:MutableList<Notes> = mutableListOf<Notes>()
+        val db=this.readableDatabase
+        val query="select * from "+ TABLE_NAME+";"
+        val result=db.rawQuery(query,null)
+        if(result.moveToFirst())
+        {
+            do {
+                val newnote=Notes()
+                newnote.title=result.getString(result.getColumnIndex(COL_TITLE))
+                newnote.Note=result.getString(result.getColumnIndex(COL_NOTE))
+                newnotes.add(newnote)
+            }while(result.moveToNext())
+        }
+        return newnotes
+    }
+
 }

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.noteapp.dbqueries.DatabaseHandler
 import com.example.noteapp.dbqueries.Notes
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -55,7 +56,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun adddata()
     {
-        val data=createdummydatas()
+        val db=DatabaseHandler(this)
+
+        val data=db.readdate()
         noteadapter.submitList(data)
     }
 
