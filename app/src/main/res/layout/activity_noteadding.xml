@@ -47,16 +47,17 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:orientation="vertical">
+
         <Button
+            android:id="@+id/addnotebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rounder_corners"
+            android:fontFamily="@font/poppins_bold"
             android:text="@string/add"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:background="@drawable/rounder_corners"
-            android:layout_gravity="center"
-            android:fontFamily="@font/poppins_bold"
-            />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
