@@ -58,8 +58,10 @@ class MainActivity : AppCompatActivity() {
     {
         val db=DatabaseHandler(this)
 
-        val data=db.readdate()
+        val data=db.readdata()
         noteadapter.submitList(data)
     }
+
+
 
 }

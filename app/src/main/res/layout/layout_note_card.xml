@@ -71,7 +71,7 @@
                     android:text="@string/remove"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="#3E0B4C"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
 

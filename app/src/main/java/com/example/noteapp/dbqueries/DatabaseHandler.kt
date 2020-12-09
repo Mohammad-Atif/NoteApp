@@ -33,7 +33,7 @@ class DatabaseHandler (var context: Context):SQLiteOpenHelper(context, DATABASE_
             Toast.makeText(context,"SUCCESFULLY ADDED",Toast.LENGTH_SHORT).show()
     }
 
-    fun readdate():MutableList<Notes>
+    fun readdata():MutableList<Notes>
     {
         val newnotes:MutableList<Notes> = mutableListOf<Notes>()
         val db=this.readableDatabase
@@ -48,7 +48,19 @@ class DatabaseHandler (var context: Context):SQLiteOpenHelper(context, DATABASE_
                 newnotes.add(newnote)
             }while(result.moveToNext())
         }
+        result.close()
+        db.close()
         return newnotes
+    }
+
+    fun deletedata(title_del:String)
+    {
+        val db=this.writableDatabase
+        val whr="delete from "+ TABLE_NAME+" where "+ COL_TITLE + "= '" + title_del +"';"
+        db.execSQL(whr)
+
+        db.close()
+
     }
 
 }

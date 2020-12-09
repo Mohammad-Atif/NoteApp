@@ -19,6 +19,8 @@ class noteadding : AppCompatActivity() {
                 val note= Notes(titletxt.text.toString(),notetxt.text.toString())
                 val db=DatabaseHandler(this)
                 db.insertdata(note)
+                titletxt.text.clear()
+                notetxt.text.clear()
             }
             else
             {

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.noteapp.dbqueries.DatabaseHandler
 import com.example.noteapp.dbqueries.Notes
 import kotlinx.android.synthetic.main.layout_note_card.view.*
 import java.util.ArrayList
@@ -55,7 +56,9 @@ class NoteAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         init {
             rembtn.setOnClickListener {
                 val p=adapterPosition
-                Toast.makeText(itemview.context,"you clicke on $p position",Toast.LENGTH_SHORT).show()
+                val db=DatabaseHandler(itemview.context)
+                db.deletedata(notestitle.text.toString())
+                Toast.makeText(itemview.context,"NOTE DELETED",Toast.LENGTH_SHORT).show()
                 noteslist.removeAt(p)
                 notifyItemRemoved(p)
             }
