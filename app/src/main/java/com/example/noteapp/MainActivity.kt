@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var noteadapter:NoteAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,noteadding::class.java)
             startActivity(intent)
         }
+
+
 //        Handler().postDelayed(
 //            {
 //                val intent = Intent(this, noteadding::class.java)
@@ -29,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         adddata()
 
     }
+
+
 
     private fun initrecyclerview()
     {

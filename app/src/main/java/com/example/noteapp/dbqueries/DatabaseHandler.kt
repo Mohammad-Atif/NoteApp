@@ -30,7 +30,7 @@ class DatabaseHandler (var context: Context):SQLiteOpenHelper(context, DATABASE_
         if(result==0.toLong())
             Toast.makeText(context,"FAILED",Toast.LENGTH_SHORT).show()
         else
-            Toast.makeText(context,"SUCCESFULLY ADDED",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,"NOTE ADDED",Toast.LENGTH_SHORT).show()
     }
 
     fun readdata():MutableList<Notes>
