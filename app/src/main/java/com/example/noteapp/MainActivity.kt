@@ -14,6 +14,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        addbtn.setOnClickListener {
+            val intent=Intent(this,noteadding::class.java)
+            startActivity(intent)
+        }
 //        Handler().postDelayed(
 //            {
 //                val intent = Intent(this, noteadding::class.java)
