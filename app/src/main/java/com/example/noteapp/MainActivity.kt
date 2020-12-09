@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun createdummydatas():List<Notes>
+    private fun createdummydatas():MutableList<Notes>
     {
-        val notesdata=ArrayList<Notes>()
+        val notesdata= mutableListOf<Notes>()
         notesdata.add(Notes("Meeting","Hey i have a very important meeting tommorow"))
         notesdata.add(Notes("test","Hey this is for test blogging can be seen as a form of social networking service. Indeed, bloggers not only produce content to post on their blogs but also often build social relations with their reade"))
         notesdata.add(Notes("dummy","this is a dummy data"))
