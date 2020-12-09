@@ -4,6 +4,8 @@ import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteapp.dbqueries.Notes
 import kotlinx.android.synthetic.main.layout_note_card.view.*
@@ -11,6 +13,7 @@ import java.util.ArrayList
 
 class NoteAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     private var noteslist: List< Notes > = ArrayList()
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return notesviewholder(
@@ -23,6 +26,10 @@ class NoteAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
             is notesviewholder -> {
                 holder.bind(noteslist.get(position))
+                holder.itemView.removenotebtn.setOnClickListener {
+                    noteslist=noteslist.drop(position)
+                    notifyDataSetChanged()
+                }
             }
 
         }
@@ -36,7 +43,6 @@ class NoteAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     fun submitList(notlists: List<Notes>){
         noteslist = notlists
     }
-
     class notesviewholder constructor(itemview : View) :RecyclerView.ViewHolder(itemview){
         val notestitle=itemview.Titletextview
         val notestext=itemview.notetxtview
@@ -50,6 +56,7 @@ class NoteAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
             notestext.setText(note.Note)
 
         }
+
     }
 
 }
