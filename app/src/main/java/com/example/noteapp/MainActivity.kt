@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         recyclerviewmain.apply {
             layoutManager=LinearLayoutManager(this@MainActivity)
             noteadapter= NoteAdapter()
+            val topspace=Topspacingdecoration(20)
+            addItemDecoration(topspace)
             adapter=noteadapter
         }
     }
