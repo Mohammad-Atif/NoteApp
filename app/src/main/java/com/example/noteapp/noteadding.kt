@@ -28,7 +28,7 @@ class noteadding : AppCompatActivity() {
             }
             else
             {
-                Toast.makeText(this,"Enter in the both fields",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Enter proper details",Toast.LENGTH_SHORT).show()
             }
         }
     }

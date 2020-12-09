@@ -24,8 +24,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_weight="1"
             android:id="@+id/notetxtview"
             android:paddingTop="10dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
             android:textSize="18sp"
             android:text="NoteView"
             />
